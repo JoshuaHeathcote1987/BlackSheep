@@ -35,6 +35,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require '../resources/js/Projects/Messenger/Routes/messenger.php';
+require base_path('resources/js/Projects/Messenger/Routes/web.php');
 
 require __DIR__.'/auth.php';

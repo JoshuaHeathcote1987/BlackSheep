@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('messengers', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+        // Messages migration
+        require base_path('resources/js/Projects/Messenger/Migrations/messenger_conversations.php');
+        require base_path('resources/js/Projects/Messenger/Migrations/messenger_messages.php');
+        require base_path('resources/js/Projects/Messenger/Migrations/messenger_reactions.php');
     }
 
     /**
@@ -22,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('messengers');
+        
     }
 };

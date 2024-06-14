@@ -17,7 +17,7 @@ use Inertia\Inertia;
 
 Route::get('/messenger/home', function () {
     return Inertia::render('Messenger/Pages/Index');
-});
+})->middleware(['auth', 'verified']);
 
 Route::apiResources([
     'messenger' => MessengerController::class,
